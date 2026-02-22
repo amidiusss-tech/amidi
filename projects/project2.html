@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amidi Project — Prokofiev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.8);
+            border-radius: 12px;
+            background: transparent;
+            transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.06);
+            border-color: #fff;
+            box-shadow:
+                0 0 12px rgba(255,255,255,0.35),
+                0 0 30px rgba(255,255,255,0.15);
+        }
+
+        .donations {
+            margin-top: 22px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .donation-btn {
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #4caf50, #43a047);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .donation-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(67,160,71,0.45);
+        }
+
+        .note {
+            margin-top: 16px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 22px;
+            }
+
+            .download-btn {
+                width: 100%;
+                font-size: 18px;
+                padding: 16px;
+            }
+
+            .donations {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .donation-btn {
+                width: 100%;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            background: #fff;
+            padding: 22px;
+            border-radius: 14px;
+            text-align: center;
+            color: #000;
+        }
+
+        .modal-content img {
+            max-width: 260px;
+            width: 80%;
+            height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .iban-text {
+            font-size: 18px;
+            font-weight: bold;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">Amidi</div>
+    <div class="subtitle">
+        Prokofiev’s "Dance of the Knights" — Romeo and Juliet, Op. 64
+    </div>
+
+    <a class="download-btn" href="../download2.zip" download="Prokofiev_Project.zip">
+        ⬇ Download Project
+    </a>
+
+    <div class="donations">
+        <a class="donation-btn" href="https://www.paypal.com/donate/?hosted_button_id=MUKR76G4KKZ4Q" target="_blank">PayPal</a>
+        <a class="donation-btn" href="https://boosty.to/soundpartners" target="_blank">Boosty</a>
+        <a class="donation-btn" href="https://t.me/amidioo" target="_blank">Telegram</a>
+        <a class="donation-btn" href="https://pay.cloudtips.ru/p/989afbb2" target="_blank">Донатик</a>
+        <button class="donation-btn" onclick="openIBAN()">💳 Donate</button>
+        <button class="donation-btn" onclick="openQR()">WeChat</button>
+    </div>
+
+    <div class="note">Your support makes this possible ❤️</div>
+</div>
+
+<div id="qrModal" class="modal" onclick="closeQR()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeQR()">×</span>
+        <p>Scan to support via WeChat:</p>
+        <img src="../WeeAmidi.jpg" alt="WeChat QR">
+    </div>
+</div>
+
+<div id="ibanModal" class="modal" onclick="closeIBAN()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeIBAN()">×</span>
+        <p>Send donations via bank transfer:</p>
+        <div class="iban-text">TR14 0001 0090 1065 9527 5050 01</div>
+    </div>
+</div>
+
+<script>
+    function openQR() {
+        document.getElementById('qrModal').style.display = 'flex';
+    }
+    function closeQR() {
+        document.getElementById('qrModal').style.display = 'none';
+    }
+
+    function openIBAN() {
+        document.getElementById('ibanModal').style.display = 'flex';
+    }
+    function closeIBAN() {
+        document.getElementById('ibanModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
