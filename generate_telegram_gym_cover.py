@@ -67,8 +67,10 @@ def draw_lifter(draw: ImageDraw.ImageDraw, cx: int, cy: int, scale: float, color
 
     # Arms
     draw.rectangle((cx - arm_span, bar_y - arm_w // 2, cx + arm_span, bar_y + arm_w // 2), fill=color)
-    draw.rectangle((cx - torso_w // 2 - arm_w, shoulder_y + 8, cx - torso_w // 2, bar_y), fill=color)
-    draw.rectangle((cx + torso_w // 2, shoulder_y + 8, cx + torso_w // 2 + arm_w, bar_y), fill=color)
+    top_y = min(shoulder_y + 8, bar_y)
+    bottom_y = max(shoulder_y + 8, bar_y)
+    draw.rectangle((cx - torso_w // 2 - arm_w, top_y, cx - torso_w // 2, bottom_y), fill=color)
+    draw.rectangle((cx + torso_w // 2, top_y, cx + torso_w // 2 + arm_w, bottom_y), fill=color)
 
     # Barbell plates
     plate_h = int(50 * scale)
