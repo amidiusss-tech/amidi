@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="50%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#ffd700"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="50%" style="stop-color:#ffaa00"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8a8a8a"/>
+      <stop offset="30%" style="stop-color:#c0c0c0"/>
+      <stop offset="70%" style="stop-color:#a0a0a0"/>
+      <stop offset="100%" style="stop-color:#707070"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#c81d42"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <g opacity="0.08">
+    <line x1="0" y1="0" x2="800" y2="800" stroke="#ffd700" stroke-width="40"/>
+    <line x1="-200" y1="0" x2="600" y2="800" stroke="#ffd700" stroke-width="40"/>
+    <line x1="200" y1="0" x2="1000" y2="800" stroke="#ffd700" stroke-width="40"/>
+    <line x1="-400" y1="0" x2="400" y2="800" stroke="#ffd700" stroke-width="40"/>
+    <line x1="400" y1="0" x2="1200" y2="800" stroke="#ffd700" stroke-width="40"/>
+  </g>
+
+  <g opacity="0.12">
+    <line x1="400" y1="400" x2="400" y2="0" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="800" y2="0" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="800" y2="400" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="800" y2="800" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="400" y2="800" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="0" y2="800" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="0" y2="400" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="0" y2="0" stroke="#e94560" stroke-width="3"/>
+    <line x1="400" y1="400" x2="200" y2="0" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="600" y2="0" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="800" y2="200" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="800" y2="600" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="600" y2="800" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="200" y2="800" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="0" y2="600" stroke="#e94560" stroke-width="2"/>
+    <line x1="400" y1="400" x2="0" y2="200" stroke="#e94560" stroke-width="2"/>
+  </g>
+
+  <rect x="100" y="370" width="600" height="18" rx="9" fill="url(#steel)" filter="url(#shadow)"/>
+  <rect x="120" y="310" width="45" height="138" rx="8" fill="#e94560" stroke="#c81d42" stroke-width="2"/>
+  <rect x="90" y="320" width="35" height="118" rx="6" fill="#c81d42" stroke="#a01535" stroke-width="2"/>
+  <rect x="60" y="335" width="35" height="88" rx="6" fill="#e94560" stroke="#c81d42" stroke-width="2"/>
+  <rect x="635" y="310" width="45" height="138" rx="8" fill="#e94560" stroke="#c81d42" stroke-width="2"/>
+  <rect x="675" y="320" width="35" height="118" rx="6" fill="#c81d42" stroke="#a01535" stroke-width="2"/>
+  <rect x="705" y="335" width="35" height="88" rx="6" fill="#e94560" stroke="#c81d42" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <circle cx="400" cy="480" r="32" fill="#d4a574"/>
+    <rect x="385" y="510" width="30" height="20" rx="4" fill="#d4a574"/>
+    <path d="M340 530 L460 530 L445 650 L355 650 Z" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/>
+    <path d="M360 540 L400 555 L440 540" fill="none" stroke="#3a3a5a" stroke-width="2"/>
+    <path d="M340 530 L280 480 L240 390" stroke="#d4a574" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <ellipse cx="300" cy="490" rx="22" ry="18" fill="#d4a574"/>
+    <path d="M460 530 L520 480 L560 390" stroke="#d4a574" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <ellipse cx="500" cy="490" rx="22" ry="18" fill="#d4a574"/>
+    <path d="M355 645 L345 720 L375 720 L400 670 L425 720 L455 720 L445 645 Z" fill="#1a1a3e"/>
+    <path d="M360 720 L355 780" stroke="#d4a574" stroke-width="24" stroke-linecap="round" fill="none"/>
+    <path d="M440 720 L445 780" stroke="#d4a574" stroke-width="24" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <path d="M130 120 L150 180 L135 180 L155 250" stroke="url(#fire)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M80 200 L100 260 L85 260 L105 330" stroke="#ffd700" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <g filter="url(#glow)">
+    <path d="M670 120 L650 180 L665 180 L645 250" stroke="url(#fire)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M720 200 L700 260 L715 260 L695 330" stroke="#ffd700" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <g filter="url(#strongGlow)" opacity="0.6">
+    <path d="M320 700 Q310 650 330 620 Q315 660 325 680 Z" fill="#e94560"/>
+    <path d="M480 700 Q490 650 470 620 Q485 660 475 680 Z" fill="#e94560"/>
+    <path d="M350 710 Q345 670 360 640 Q348 665 355 690 Z" fill="#ff6b35"/>
+    <path d="M450 710 Q455 670 440 640 Q452 665 445 690 Z" fill="#ff6b35"/>
+  </g>
+
+  <text x="400" y="140" font-family="Impact, Arial Black, sans-serif" font-size="90" font-weight="900" fill="url(#gold)" text-anchor="middle" letter-spacing="12" filter="url(#glow)" stroke="#ff8c00" stroke-width="2">ALPHA</text>
+
+  <text x="400" y="230" font-family="Impact, Arial Black, sans-serif" font-size="72" font-weight="900" fill="url(#fire)" text-anchor="middle" letter-spacing="8" filter="url(#glow)" stroke="#c81d42" stroke-width="2">&#x041A;&#x0410;&#x0427;&#x0410;&#x041B;&#x041A;&#x0410;</text>
+
+  <g transform="translate(400, 290)">
+    <rect x="-160" y="-30" width="320" height="50" rx="25" fill="url(#redGlow)" filter="url(#glow)"/>
+    <text x="0" y="8" font-family="Impact, Arial Black, sans-serif" font-size="30" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="3">2x &#x0412; &#x041D;&#x0415;&#x0414;&#x0415;&#x041B;&#x042E;</text>
+  </g>
+
+  <g transform="translate(120, 700) rotate(-30)">
+    <rect x="-30" y="-5" width="60" height="10" rx="5" fill="url(#steel)"/>
+    <rect x="-40" y="-14" width="14" height="28" rx="3" fill="#e94560"/>
+    <rect x="26" y="-14" width="14" height="28" rx="3" fill="#e94560"/>
+  </g>
+  <g transform="translate(680, 700) rotate(30)">
+    <rect x="-30" y="-5" width="60" height="10" rx="5" fill="url(#steel)"/>
+    <rect x="-40" y="-14" width="14" height="28" rx="3" fill="#e94560"/>
+    <rect x="26" y="-14" width="14" height="28" rx="3" fill="#e94560"/>
+  </g>
+
+  <g fill="#ffd700" filter="url(#glow)">
+    <polygon points="400,750 407,770 428,770 411,782 418,802 400,790 382,802 389,782 372,770 393,770" opacity="0.9"/>
+    <polygon points="300,760 305,773 318,773 307,781 311,794 300,786 289,794 293,781 282,773 295,773" opacity="0.6" transform="scale(0.7) translate(128,350)"/>
+    <polygon points="500,760 505,773 518,773 507,781 511,794 500,786 489,794 493,781 482,773 495,773" opacity="0.6" transform="scale(0.7) translate(214,350)"/>
+  </g>
+
+  <rect x="5" y="5" width="790" height="790" rx="20" fill="none" stroke="url(#gold)" stroke-width="4" opacity="0.5"/>
+  <rect x="15" y="15" width="770" height="770" rx="15" fill="none" stroke="#e94560" stroke-width="2" opacity="0.3"/>
+</svg>
